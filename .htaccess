@@ -1,0 +1,6 @@
+RewriteEngine On
+ErrorDocument 400 /readerscorner/error.php?error=400
+ErrorDocument 401 /readerscorner/error.php?error=permission
+ErrorDocument 403 /readerscorner/error.php?error=permission
+ErrorDocument 404 /readerscorner/error.php?error=404
+ErrorDocument 500 /readerscorner/error.php?error=500

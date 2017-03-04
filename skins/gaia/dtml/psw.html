@@ -1,0 +1,61 @@
+<div class="Contact">
+    <!----- header-section ---->
+    <div class="header-section">
+        <div class="container">
+            <h1>Change Password</h1>
+        </div>
+    </div>
+    <!----- header-section ---->
+    <!----- hosting-grids ----->
+    <div class="contact-grids">
+        <div class="container">
+            <div class="contact-bottom-grids">
+                <form id="dataentry" action="edit.php?mode=edit&what=psw" method="POST">
+                    <input type="hidden" id="page" name="page" value="1"/>
+
+                        <div class="contact-bottom-grid-left" style="width:48%;">
+                            <div class="text">
+
+                                <div class="text-fild" style="margin-top:15px; <[hidePassword]>">
+                                    <label for="oldpassword"><span>Old Password:</span></label>
+                                    <input type="password" style="width: 98%;" id="oldpassword" name="password" class="text" required placeholder="Your Old Password here">
+                                </div>
+
+                                <br>
+
+                                <div class="text-fild" style="margin-top:15px; <[hidePassword]>">
+                                    <label for="password"><span>New Password:</span></label>
+                                    <input type="password" style="width: 98%;" id="password" name="newpassword" class="text" oninput="document.getElementById('newpassword2').pattern = escapeRegExp(this.value)" required placeholder="Your New Password here">
+                                </div>
+
+                                <br>
+
+                                <div class="text-fild" style="margin-top:15px; <[hidePassword]>">
+                                    <label for="newpassword2"><span>Repeat New Password:</span></label>
+                                    <input type="password" style="width: 98%;" id="newpassword2" name="newpassword2" class="text" required placeholder="Repeat New Password">
+                                </div>
+
+                                <div class="clearfix"> </div>
+                            </div>
+
+                            <br>
+
+                            <input type="submit" value="submit">
+
+
+                        </div>
+                </div>
+                </form>
+                <div class="clearfix"> </div>
+            </div>
+        </div>
+    </div>
+    <!----- hosting-grids ----->
+</div>
+
+
+<script>
+    function escapeRegExp(str) {
+        return str.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, "\\$&");
+    }
+</script>

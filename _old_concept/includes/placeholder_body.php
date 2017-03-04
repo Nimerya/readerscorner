@@ -1,0 +1,1 @@
+<div class="mid-container placeholder_body"></div>

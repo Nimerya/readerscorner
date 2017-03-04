@@ -1,0 +1,53 @@
+
+<!-- Product-Details-page -->
+<div class="details-page">
+    <div class="content details-page">
+        <!---start-product-details--->
+        <div class="product-details">
+            <div class="container">
+
+                <div style="float:left;">
+                    <h3 style="float:left; margin-top:20px;"><strong><[name]>'s Orders:</strong></h3>
+                </div>
+
+                <div class="reviewContainer">
+                    <p class="hiddenpippo" style="<[showWarning]>">The are no orders :(</p>
+
+                    <div class="reviewListContainer" style="<[hideOrders]> margin-top:-20px;">
+                        <br>
+                        <table style="width:100%;" class="reportTable">
+                            <tr style="border-bottom:1px solid #b0aaa0">
+                                <th>#</th>
+                                <th>Date</th>
+                                <th>Tot.</th>
+                                <th>Status</th>
+                                <th style="text-align: right;">Cancel Order</th>
+                            </tr>
+                            <[foreach]>
+                            <tr style="<[coloredRow]>">
+                                <td><a style="cursor:pointer;" href="order.php?id=<[id]>">000<[id]></a></td>
+                                <td><[date_order::format library="utils"]></td>
+                                <td><[total]></td>
+                                <td><[status]></td>
+                                <td style="text-align: right;">
+                                    <button type="button" class="myButton3delete invisibileLink" onclick="window.location='order.php?id=<[id]>&mode=cancel'">Confirm</button>
+                                    <a style="<[hideCancel]> cursor:pointer;" onclick="this.style.display='none'; this.previousElementSibling.style.visibility='visible';"><img style="width:20px;" src="/readerscorner/images/delete.png"></a>
+                                </td>
+                            </tr>
+                            <[/foreach]>
+                        </table>
+
+                        <br>
+
+
+
+                        <div style="margin-bottom:20px;"></div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+</div>

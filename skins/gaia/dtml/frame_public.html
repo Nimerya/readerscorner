@@ -1,0 +1,392 @@
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="UTF-8"/>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>The Reader's Corner</title>
+
+		<link rel="apple-touch-icon-precomposed" sizes="57x57" href="/readerscorner/images/favicon/apple-touch-icon-57x57.png" />
+		<link rel="apple-touch-icon-precomposed" sizes="114x114" href="/readerscorner/images/favicon/apple-touch-icon-114x114.png" />
+		<link rel="apple-touch-icon-precomposed" sizes="72x72" href="/readerscorner/images/favicon/apple-touch-icon-72x72.png" />
+		<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/readerscorner/images/favicon/apple-touch-icon-144x144.png" />
+		<link rel="apple-touch-icon-precomposed" sizes="60x60" href="/readerscorner/images/favicon/apple-touch-icon-60x60.png" />
+		<link rel="apple-touch-icon-precomposed" sizes="120x120" href="/readerscorner/images/favicon/apple-touch-icon-120x120.png" />
+		<link rel="apple-touch-icon-precomposed" sizes="76x76" href="/readerscorner/images/favicon/apple-touch-icon-76x76.png" />
+		<link rel="apple-touch-icon-precomposed" sizes="152x152" href="/readerscorner/images/favicon/apple-touch-icon-152x152.png" />
+		<link rel="icon" type="image/png" href="/readerscorner/images/favicon/favicon-196x196.png" sizes="196x196" />
+		<link rel="icon" type="image/png" href="/readerscorner/images/favicon/favicon-96x96.png" sizes="96x96" />
+		<link rel="icon" type="image/png" href="/readerscorner/images/favicon/favicon-32x32.png" sizes="32x32" />
+		<link rel="icon" type="image/png" href="/readerscorner/images/favicon/favicon-16x16.png" sizes="16x16" />
+		<link rel="icon" type="image/png" href="/readerscorner/images/favicon/favicon-128.png" sizes="128x128" />
+		<meta name="application-name" content="&nbsp;"/>
+		<meta name="msapplication-TileColor" content="#FFFFFF" />
+		<meta name="msapplication-TileImage" content="/readerscorner/images/favicon/mstile-144x144.png" />
+		<meta name="msapplication-square70x70logo" content="/readerscorner/images/favicon/mstile-70x70.png" />
+		<meta name="msapplication-square150x150logo" content="/readerscorner/images/favicon/mstile-150x150.png" />
+		<meta name="msapplication-wide310x150logo" content="/readerscorner/images/favicon/mstile-310x150.png" />
+		<meta name="msapplication-square310x310logo" content="/readerscorner/images/favicon/mstile-310x310.png" />
+
+
+		<link href="/readerscorner/skins/gaia/css/bootstrap.css" rel='stylesheet' type='text/css' />
+		<script src="/readerscorner/skins/gaia/js/jquery.min.js"></script>
+		 <!-- Custom Theme files -->
+		<link href="/readerscorner/skins/gaia/css/style.css" rel='stylesheet' type='text/css' />
+   		 <!-- Custom Theme files -->
+   		 <meta name="viewport" content="width=device-width, initial-scale=1">
+		 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+   		 <!-- webfonts -->
+   		 <link href='http://fonts.googleapis.com/css?family=Glegoo:400,700' rel='stylesheet' type='text/css'>
+
+   		 <link href='http://fonts.googleapis.com/css?family=Rochester' rel='stylesheet' type='text/css'>
+   		 <link href='http://fonts.googleapis.com/css?family=Lora:400,700' rel='stylesheet' type='text/css'>
+		<script type="text/javascript" src="/readerscorner/skins/gaia/js/jquery.shorten.1.0.js"></script>
+		<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/themes/start/jquery-ui.css" type="text/css" media="all" />
+		<script src="/readerscorner/skins/gaia/js/js-webshim/minified/polyfiller.js"></script>
+		<script>
+            webshims.setOptions('waitReady', false);
+            webshims.setOptions('forms-ext', {types: 'date'});
+            webshims.polyfill('forms forms-ext');
+            webshim.activeLang('en');
+            webshims.cfg.no$Switch = true;
+		</script>
+
+		<script>
+			$(document).ready(function(){
+
+
+                $('.homeMenuItems')
+					.mousedown(function(){
+                    	$(this).css('padding-top','3px');
+                	})
+					.mouseup(function(){
+                        $(this).css('padding-top','0px');
+					});
+
+
+                    var fade_out = function() {
+                        $("#message").fadeOut();
+                    };
+                    setTimeout(fade_out, 2750);
+
+					var messageText='<[message]>';
+                    if ('<[message]>' != '') {
+
+                        $("body").prepend("<div id='message' style='font-size: 13px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); cursor: pointer; color: #4444dd; opacity: 1; position: absolute;z-index: 9999; width: 280px; height: 100px; border-radius: 3px; background-color: #88ddff; border:1px solid transparent; right: 30px; top:90px; padding: 10px;'><div>");
+                        var message;
+                        switch('<[message]>') {
+                            case "OK-add-cart":
+                                $('#message').css({'background-color': '#dff0d8', 'color': '#3c763d', 'border-color': '#d6e9c6'});
+                                message = '<strong>Success!</strong><br><br>The book has been added to your cart.';
+                                break;
+                            case "OK-add-wish":
+                                $('#message').css({'background-color': '#dff0d8', 'color': '#3c763d', 'border-color': '#d6e9c6'});
+                                message = '<strong>Success!</strong><br><br>he book has been added to your wishlist.';
+                                break;
+                            case "OK-logout":
+                                $('#message').css({'background-color': '#dff0d8', 'color': '#3c763d', 'border-color': '#d6e9c6'});
+                                message = '<strong>Success!</strong><br><br>You are now logged out.';
+                                break;
+                            case "OK-signup":
+                                $('#message').css({'background-color': '#dff0d8', 'color': '#3c763d', 'border-color': '#d6e9c6'});
+                                message = '<strong>Success!</strong><br><br>You can now login with the email/password you provided.';
+                                break;
+                            case "OK-login":
+                                $('#message').css({'background-color': '#dff0d8', 'color': '#3c763d', 'border-color': '#d6e9c6'});
+                                message = '<strong>Success!</strong><br><br>You are now logged in.';
+                                break;
+                            case "KO-order-canc":
+                                $('#message').css({'background-color': '#f2dede', 'color': '#a94442', 'border-color': '#ebccd1'});
+                                message = '<strong>Warning!</strong><br><br>You can\'t cancel orders that have already been processed.';
+                                break;
+                            case "OK-order-canc":
+                                $('#message').css({'background-color': '#dff0d8', 'color': '#3c763d', 'border-color': '#d6e9c6'});
+                                message = '<strong>Success!</strong><br><br>The order has been canceled.';
+                                break;
+							case "OK-order":
+                                $('#message').css({'background-color': '#dff0d8', 'color': '#3c763d', 'border-color': '#d6e9c6'});
+                                message = '<strong>Success!</strong><br><br>Your order has been added.';
+                                break;
+                            case "KO-wrong-card-data":
+                                $('#message').css({'background-color': '#f2dede', 'color': '#a94442', 'border-color': '#ebccd1'});
+                                message = '<strong>Warning!</strong><br><br>The card you inserted is not valid.';
+                                break;
+							case "KO-bad-old-psw":
+                                $('#message').css({'background-color': '#f2dede', 'color': '#a94442', 'border-color': '#ebccd1'});
+                                message = '<strong>Warning!</strong><br><br>The old password you inserted is wrong, try again.';
+                                break;
+							case "KO-not-logged":
+                                $('#message').css({'background-color': '#f2dede', 'color': '#a94442', 'border-color': '#ebccd1'});
+                                message = '<strong>Warning!</strong><br><br>We need you to be registered and logged in to proceed with your request.';
+							    break;
+							case "OK-review-add":
+                                $('#message').css({'background-color': '#dff0d8', 'color': '#3c763d', 'border-color': '#d6e9c6'});
+                                message = '<strong>Success!</strong><br><br>Your review has been added.';
+                                break;
+							case "OK-recover":
+                                $('#message').css({'background-color': '#dff0d8', 'color': '#3c763d', 'border-color': '#d6e9c6'});
+                                message = '<strong>Success!</strong><br><br>A temporary password has been sent to your email address.';
+                                break;
+							case "OK-message":
+                                $('#message').css({'background-color': '#dff0d8', 'color': '#3c763d', 'border-color': '#d6e9c6'});
+                                message = '<strong>Success!</strong><br><br>The message has been sent successfully.';
+                                break;
+                            case "OK":
+                                $('#message').css({'background-color': '#dff0d8', 'color': '#3c763d', 'border-color': '#d6e9c6'});
+                                message = '<strong>Success!</strong><br><br>Your request has been completed successfully.';
+                                break;
+                            case "empty":
+                                $('#message').css({'background-color': '#fcf8e3', 'color': '#8a6d3b', 'border-color': '#faebcc'});
+                                message = '<strong>Warning!</strong><br><br>The are no items matching your request.';
+                                break;
+                            case "error":
+                            case "KO":
+                                $('#message').css({'background-color': '#f2dede', 'color': '#a94442', 'border-color': '#ebccd1'});
+                                message = '<strong>Warning!</strong><br><br>There was a problem with your request.';
+                                break;
+							default:
+                                $('#message').css({'background-color': '#f2dede', 'color': '#a94442', 'border-color': '#ebccd1'});
+                                message = '<strong>Warning!</strong><br><br>'+messageText;
+                                break;
+                        }
+
+                        setTimeout(fade_out, 6000);
+
+                        $('#message')
+                            .html(message)
+                            .hide()
+                            .fadeIn()
+                            .click(function(){
+                                $(this).fadeOut();
+                            });
+                    }
+
+			    $('#catmenu').on("mouseover",function() {
+                    						$('#myDropdown').css("margin-left", $('#homemenu').css("width"))
+												     .css("top", $('#homemenu').height()-5 +"px")
+                    			                     .css("width", $('#categorymenu').width() +"px");
+				                          });
+
+				$('#prommenu').on("mouseover", function() {
+                    var sum=0;
+
+                    $('#myDropdown2').css("margin-left", $('#homemenu').width() +
+                        $('#categorymenu').width() +
+                        $('#namenu').width() + "px")
+                        .css("top", $('#homemenu').height()-4 +"px")
+                        .css("width", $('#prommenu').width() +"px");
+                });
+ 
+			    $("#boxCategory1").addClass("boxCategory1");
+
+                $("span.menu").click(function(){
+                    $(".top-nav ul").slideToggle(500);
+                });
+
+			});
+
+
+		</script>
+
+   		  <!-- webfonts -->
+	</head>
+	<body>
+		<!-- container -->
+		<!-- header -->
+		<div class="header">
+			<!-- top-header -->
+			<div class="top-header">
+				<div class="container">
+					<div class="rigister-info">
+						<ul>
+							<[admin]>
+							<[loginout]>
+							<div class="clearfix"> </div>
+						</ul>
+					</div>
+					<div class="clearfix"> </div>
+				</div>
+			</div>
+			<!-- /top-header -->
+			<!-- bottom-header -->
+			<div class="bottom-header">
+				<div class="container">
+					<div class="bottom-header-left">
+						<[welcome]>
+						<p><[quote]></p>
+					</div>
+					<div class="logo">
+						<a href="index.php"><img src="/readerscorner/images/logo.png" title="gaia" /></a>
+					</div>
+					<div class="bottom-header-right" style="position:relative; height: 90px;">
+						<div style="<[hideUserbar]> margin-bottom:10px; width:100%;  float:right;">
+							<div class="homeMenuItems" style="border-right:0;"><a href="checkout.php">Checkout</a></div>
+							<div class="homeMenuItems" ><a href="cart.php?mode=show&where=cart">Cart</a></div>
+							<div class="homeMenuItems" ><a href="cart.php?mode=show&where=wish">Wishlist</a></div>
+							<div class="homeMenuItems" ><a href="order.php">Orders</a></div>
+							<div class="homeMenuItems" ><a href="account.php">My Account</a></div>
+
+						</div>
+						<div class="search-cart" style="position:absolute; bottom:0;">
+							<div class="search-box">
+								<form method="POST" id="sq" name="sqform" action="search.php">
+									<input type="text" autofocus="autofocus" name="sq" id="sqinput" placeholder="Insert: Title / ISBN13" />
+									<input type="submit" value="" />
+
+							</div>
+
+							<div class="cart-box">
+								<select name="mode" onchange="
+													if(this.value=='b'){
+														document.getElementById('sqinput').placeholder='Insert: Title / ISBN13';
+													}else{
+													    document.getElementById('sqinput').placeholder='Insert: Name / Surname';
+													}" class="select_home">
+									<option class="myoption" value="b">Book</option>
+									<option class="myoption" value="a">Author</option>
+								</select>
+							</div>
+							</form>
+
+							<div class="clearfix"> </div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- /bottom-header -->
+		</div>
+		<!-- header -->
+		<!--- top-nav -->
+		<div class="top-nav">
+			<div class="container">
+				<div class="dropdown">
+				<span class="menu"> </span>
+				<ul id="topmenu" style="cursor:pointer;">
+					<li class="<[home_active]>" id="homemenu"><a href="index.php">Home<span> </span></a></li>
+
+
+						<span id="catmenu" style="position:relative; border-top:1px solid #f7f6ee">
+						<li id="categorymenu" class="<[category_active]>"><a>Categories<span> </span></a></li>
+
+						<div id="myDropdown" class="dropdown-content ddc_cat">
+							<[foreach]>
+							<div class="ddentry" onmouseover="this.style.borderColor='#b0aaa0'" onmouseout="this.style.borderColor='#f7f6ee'">
+								<a href="search.php?cid=<[ddcatid]>"><[ddcatname]></a>
+							</div>
+							<[/foreach]>
+						</div>
+						</span>
+
+
+					<li id="namenu" class="<[na_active]>"><a href="search.php?sq=newarrivals">New Arrivals<span> </span></a></li>
+
+					<span id="prommenu2" style="position:relative;">
+					<li id="prommenu" class="<[sales_active]>"><a>Sales<span> </span></a></li>
+
+
+					<div id="myDropdown2" class="dropdown-content ddc_prom">
+						<[foreach]>
+						<div class="ddentry" onmouseover="this.style.borderColor='#b0aaa0'" onmouseout="this.style.borderColor='#f7f6ee'">
+							<a href="search.php?promid=<[ddpromid]>"><[ddpromname]></a>
+						</div>
+						<[/foreach]>
+					</div>
+					</span>
+
+
+
+					<li class="<[best_active]>"><a href="search.php?sq=bestsellers">Bestsellers<span> </span></a></li>
+					<li class="<[about_active]>"><a href="page.php?item=21">About Us<span> </span></a></li>
+					<li class="<[contact_active]>"><a href="contact.php">Contact Us &nbsp<span> </span></a></li>
+					<div class="clearfix"> </div>
+				</ul>
+			</div>
+			</div>
+		</div>
+		<!--- top-nav -->
+		<!-- script-for-nav -->
+			
+		<!-- /script-for-nav -->
+
+		<[body]>
+
+
+		<br>
+		<br>
+		<!-- footer -->
+		<div class="footer">
+			<div class="container">
+				<div class="footer-grids">
+					<div class="col-md-3 footer-grid">
+						<h3>Information</h3>
+						<ul>
+							<[foreach]>
+								<li><a href="page.php?item=<[infoid]>"><[infotitle::uppercase library="utils"]></a></li>
+							<[/foreach]>
+						</ul>
+					</div>
+					<div class="col-md-3 footer-grid">
+						<h3>F.A.Q.</h3>
+						<ul>
+							<[foreach]>
+								<li><a href="page.php?item=<[faqid]>"><[faqtitle::uppercase library="utils"]></a></li>
+							<[/foreach]>
+						</ul>
+					</div>
+					<div class="col-md-3 footer-grid about-grid">
+					</div>
+					<div class="col-md-3 footer-grid testimonial">
+						<h3>Who are we?</h3>
+						<div class="testmonial-grid">
+							<p><strong>Valentina Cecchini</strong> - (227719), Student @ University of Studies of L'Aquila.</p>
+						</div>
+						<div class="clearfix"> </div>
+						<div class="testmonial-grid">
+							<p><strong>Stefano Valentini</strong> - (227718), Student @ University of Studies of L'Aquila.</p>
+						</div>
+					</div>
+
+					<div class="clearfix"> </div>
+				</div>
+
+				<div class="social-icons text-center">
+					<ul>
+						<li><a href="http://www.facebook.com"><span class="facebook"> </span></a></li>
+						<li><a href="http://www.twitter.com"><span class="twitter"> </span></a></li>
+						<li><a href="http://www.plus.google.com"><span class="gpluse"> </span></a></li>
+						<li><a href="http://www.pinterest.com"><span class="pin"> </span></a></li>
+						<li><a href="http://www.youtube.com"><span class="you"> </span></a></li>
+					</ul>
+				</div>
+
+				<!-- footer-bottom -->
+				<div class="footer-bottom">
+					<div class="footer-bottom-left">
+						<p>GAIA inc &#169; 2014 All rights reserved | Template by <a href="http://w3layouts.com/">W3layouts</p>
+					</div>
+
+
+
+					<div class="footer-bottom-right">
+						<ul>
+							<li><span class="visa"> </span></li>
+							<li><span class="master"> </span></li>
+							<li><span class="paypla"> </span></li>
+							<li><span class="ami"> </span></li>
+						</ul>
+					</div>
+					<div class="clearfix"> </div>
+					<!-- footer-bottom -->
+				</div>
+			</div>
+		</div>
+		<!-- footer -->
+		<!-- container -->
+	</body>
+</html>
+

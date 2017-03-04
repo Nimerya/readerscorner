@@ -1,0 +1,101 @@
+
+<!-- Product-Details-page -->
+<div class="details-page">
+    <div class="content details-page">
+        <!---start-product-details--->
+        <div class="product-details">
+            <div class="container">
+
+                <div style="width:250px; float:left;">
+                    <h3 style="float:left; margin-top:20px;"><strong>Choose an Address:</strong></h3>
+                    <p class="hiddenpippo" style="float:left; <[showWarning]>">There are no addresses :( <br> Please add one to proceed.</p>
+                </div>
+                <div style="float:right; width:50px; margin-top:5px;">
+                    <img class="cart-wish-btn" src="/readerscorner/images/add.png" onclick="window.location='edit.php?mode=add'">
+
+                </div>
+
+                <div class="reviewContainer" style="<[hideAddresses]>">
+
+                    <div class="reviewListContainer" style="margin-top:-20px;">
+                        <br>
+                        <[foreach]>
+                        <div class="reviewItem" style="position:relative">
+
+                            <div style="float:right; width:77px;">
+                                <img class="cart-wish-btn" style="width: 36px; margin:0; border-color:#b5b4a5" src="/readerscorner/images/edit.png" onclick="window.location='edit.php?mode=edit&what=adr&idaddr=<[idaddr]>'">
+                                <img class="cart-wish-btn" style="width:36px; margin:0; border-color:#b5b4a5" src="/readerscorner/images/delete.png" onclick="window.location='edit.php?mode=del&idaddr=<[idaddr]>'">
+                            </div>
+
+                            <p class="addressItem"><b>Address:</b> <[address::replace library="utils"]></p>
+                            <p class="addressItem"><b>Country:</b> <[country::replace library="utils"]></p>
+                            <p class="addressItem"><b>Region:</b> <[region::replace library="utils"]></p>
+                            <p class="addressItem"><b>City:</b> <[city::replace library="utils"]></p>
+                            <p class="addressItem" style="margin:0; width:50%;"><b>ZipCode:</b> <[zip_code]></p>
+
+
+                            <div style="position: absolute; bottom:5px; right:10px; width:36px;">
+                                <img class="cart-wish-btn" style="width:36px; margin:0; border-color:#b5b4a5" src="/readerscorner/images/tick.png" onclick="window.location='checkout.php?step=1&idaddr=<[idaddr]>'">
+                            </div>
+
+                        </div>
+                        <[/foreach]>
+
+
+                        <ul class="pagination" >
+                            <li >
+                                <a class="pagebutton" href="account.php?pn=1" aria-label="Previous"><span aria-hidden="true">«</span></a>
+                            </li>
+                            <li class="<[disabled_prev]>">
+                                <a class="pagebutton" href="account.php?pn=<[prevPage]>">‹</a>
+                            </li>
+                            <li class="active">
+                                <a class="pagebuttonMain" href="#">Page <[currentPage]> of <[lastPage]></a>
+                            </li>
+                            <li class="<[disabled_next]>">
+                                <a class="pagebutton" href="account.php?pn=<[nextPage]>">›</a>
+                            </li>
+                            <li>
+                                <a class="pagebutton" href="account.php?pn=<[lastPage]>" aria-label="Next"><span aria-hidden="true">»</span></a>
+                            </li>
+
+                        </ul>
+
+                            <ul class="pagination" style="float:right;">
+                                <li>
+                                <span class="pagebutton2"  aria-hidden="true">
+                                    <a style="pointer-events: none"> Jump to page &nbsp;</a>
+                                    <input class="pageinput" type="number" min="1" step="1" id="jump"/>
+                                </span>
+                                </li>
+                                <li class="no_hover" style="cursor: pointer;" onclick="window.location='account.php?pn='+document.getElementById('jump').value"><a class="pagebutton" aria-label="Next"><span aria-hidden="true">»</span></a></li>
+                            </ul>
+
+                        <ul class="pagination" style="float: right; margin-right:10px;">
+                            <li>
+                            <span class="pagebutton2" aria-hidden="true">
+                                <a style="pointer-events: none;">Page size:&nbsp;</a>
+                                <input id="psize" value="<[psize_a]>" class="pageinput" type="text" pattern="^[0-9]+$" onclick="this.value='';" onchange="window.location='account.php?psize_a='+document.getElementById('psize').value"/>
+                            </span>
+                            </li>
+                        </ul>
+
+                        <div style="margin-bottom:20px;"></div>
+                    </div>
+                </div>
+                </div>
+            </div>
+
+
+
+
+            <div class="clearfix"></div>
+        </div>
+
+
+
+        <div class="clearfix"></div>
+    </div>
+
+
+<!-- /Product-Details-page -->

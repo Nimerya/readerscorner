@@ -1,0 +1,125 @@
+<div style="margin-top:30px;"></div>
+<!-- bottom-grids -->
+<div class="bottom-grids">
+    <div class="container">
+
+        <div class="col-md-9 bottom-grids-left " style="width:100%;">
+
+
+
+            <div class="f-products" >
+                <h2><strong><[number]></strong> books found for: <strong><[searchquery]></strong></h2>
+                <!----sreen-gallery-cursual---->
+
+                <div class="f-products hiddenpippo" style="<[showauthor]> width:100%; border-bottom:1px solid #b0aaa0">
+                    <div style="margin-top:20px;"></div>
+                    <div class="sreen-gallery-cursual">
+                        <div id="owl-demo6" class="owl-carousel text-center">
+                            <div style="width:100%; height: auto; margin: 0 auto;">
+                                <div class="item" style="float:left; width:215px; margin:3px 30px 10px 3px; background: #ecebdf; ">
+                                    <div class="product-grid">
+                                        <div class="product-pic">
+                                            <img class="img_owl_slider" onerror="this.src='/readerscorner/images/author/empty2.png'" src="/readerscorner/images/author/<[photo]>"
+                                                 title="<[name]>"/>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                                <div style="max-width:100%">
+                                    <h4 style="padding-top:5px;" align="left"><strong>Short biography:</strong></h4>
+                                    <p align="justify"><[biography]></p>
+                                </div>
+                            </div>
+
+                        </div>
+                        <!--//sreen-gallery-cursual---->
+                    </div>
+                </div>
+
+
+
+
+                <div style="margin-top:20px;"></div>
+
+
+                <div class="sreen-gallery-cursual">
+                    <div id="owl-demo" class="owl-carousel text-center">
+                        <div style="width:100%; height: auto; margin: 0 auto;">
+                        <[foreach]>
+                        <div class="item" style="<[disabled]> cursor: pointer; width:215px; margin:3px 3px; float:left; background: #ecebdf; ">
+                            <a href="item.php?pid=<[id]>">
+                            <div class="product-grid">
+                                <div class="product-pic">
+                                    <img class="img_owl_slider" src="/readerscorner/images/cover/<[cover]>"
+                                         title="<[title]>"/>
+                                </div>
+                                <div class="product-pic-info">
+                                    <h3><a href="item.php?pid=<[id]>"><[title::shorter length="18" library="utils"]></a></h3>
+                                    <div class="product-pic-info-price-cart">
+                                        <div class="product-pic-info-price" style="float:none; ">
+                                            <div style="float:left;">
+                                                <span style="font-size:115%;"><strong>€</strong> <strike><[price]></strike> <strong><[newprice]></strong></span>
+                                            </div>
+                                            <div style="float:right;">
+                                                <span style="font-size:115%;"><strong><[discount]></strong></span>
+                                            </div>
+                                        </div>
+
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            </a>
+                        </div>
+                        <[/foreach]>
+                        </div>
+                    </div>
+                    <!--//sreen-gallery-cursual---->
+                </div>
+            </div>
+        </div>
+        <div class="clearfix" style="margin-bottom:50px;"></div>
+        <ul class="pagination" style="<[hidePagination]>" >
+            <li >
+                <a class="pagebutton" href="search.php?<[sq]>&pn=1" aria-label="Previous"><span aria-hidden="true">«</span></a>
+            </li>
+            <li class="<[disabled_prev]>">
+                <a class="pagebutton" href="search.php?<[sq]>&pn=<[prevPage]>">‹</a>
+            </li>
+            <li class="active">
+                <a class="pagebuttonMain" href="#">Page <[currentPage]> of <[lastPage]></a>
+            </li>
+            <li class="<[disabled_next]>">
+                <a class="pagebutton" href="search.php?<[sq]>&pn=<[nextPage]>">›</a>
+            </li>
+            <li>
+                <a class="pagebutton" href="search.php?<[sq]>&pn=<[lastPage]>" aria-label="Next"><span aria-hidden="true">»</span></a>
+            </li>
+
+        </ul>
+
+        <ul class="pagination" style="float:right; <[hidePagination]>">
+            <li>
+                <span class="pagebutton2"  aria-hidden="true">
+                    <a style="pointer-events: none"> Jump to page &nbsp;</a>
+                    <input class="pageinput" type="number" min="1" step="1" id="jump"/>
+                </span>
+            </li>
+            <li class="no_hover" style="cursor: pointer;" onclick="window.location='search.php?<[sq]>&pn='+document.getElementById('jump').value"><a class="pagebutton" aria-label="Next"><span aria-hidden="true">»</span></a></li>
+        </ul>
+
+        <ul class="pagination" style="float: right; margin-right:10px; <[hidePagination]>">
+            <li>
+                <span class="pagebutton2" aria-hidden="true">
+                    <a style="pointer-events: none;">Page size:&nbsp;</a>
+                <input id="psize" value="<[psize_a]>" class="pageinput" type="text" pattern="^[0-9]+$" onclick="this.value='';" onchange="window.location='search.php?<[sq]>&psize_a='+document.getElementById('psize').value"/>
+            </span>
+            </li>
+        </ul>
+    </div>
+
+</div>
+
+
+<!-- bottom-grids -->

@@ -1,0 +1,74 @@
+<div class="Contact">
+    <!----- header-section ---->
+    <div class="header-section">
+        <div class="container">
+            <h1>Add a card</h1>
+        </div>
+    </div>
+    <!----- header-section ---->
+    <!----- hosting-grids ----->
+    <div class="contact-grids">
+        <div class="container">
+            <div class="contact-bottom-grids">
+                <form id="dataentry" action="checkout.php" method="POST">
+                    <input type="hidden" id="step" name="step" value="2"/>
+
+                        <div class="contact-bottom-grid-left" style="width:48%;">
+                            <div class="text">
+                                <div class="text-fild" >
+                                    <label for="owner" ><span>Owner:</span></label>
+                                    <input type="text" style="width: 125%;" required class="text" id="owner" tabindex="1" name="owner" placeholder="Card's Owner Here">
+                                </div>
+                                <br>
+                                <div class="text-fild" style="margin-top:15px;">
+                                    <label for="number"><span>Number:</span></label>
+                                    <input type="text" style="width: 175%;" id="number" name="number" class="text" tabindex="3" pattern="[0-9]{13,16}" placeholder="Card Number Here" required>
+                                </div>
+
+                                <div class="clearfix"> </div>
+                            </div>
+                            <br>
+                            <input type="submit" value="submit">
+                        </div>
+
+                        <div class="contact-bottom-grid-right" style="width:50%;">
+
+                        <div class="text">
+
+                            <div class="text-fild" style="margin-top:0px;">
+                                <label for="ccv"><span>CCV Code:</span></label><br>
+                                <input type="number" min="000" max="999" step="1" style="width: 60%;" id="ccv" name="ccv" tabindex="2" class="text" required placeholder="CCV Code Here">
+                            </div>
+
+                            <br>
+
+                            <div class="text-fild" style="margin-top:15px;">
+                                <label for="expire_month"><span>Expire Date:</span></label>
+                                <br>
+                                <input type="number" placeholder="Month"  style="min-width:0px; width: 33%;margin-right:5px;  float:left; height:50px;" id="expire_month" tabindex="4" name="expire_month" class="text" min="1" max="12" step="1" required/>
+                                <input type="number" placeholder="Year" style="min-width:0px; width: 33%; float:left; height:50px;" id="expire_year" tabindex="5" name="expire_year" class="text" min="2017" step="1" required/>
+                            </div>
+
+                            <br>
+
+                            <div class="text-fild" style="margin-top:25px; width:100%;">
+                                <label style="color:#aeaba5;"><span>All the above fields are mandatory</span></label>
+                            </div>
+
+                            <div class="clearfix"> </div>
+                        </div>
+                    </div>
+                </form>
+                <div class="clearfix"> </div>
+            </div>
+        </div>
+    </div>
+    <!----- hosting-grids ----->
+</div>
+
+
+<script>
+    function escapeRegExp(str) {
+        return str.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, "\\$&");
+    }
+</script>

@@ -1,0 +1,225 @@
+<script>
+    window.onload = function () {
+        var obj = document.getElementById('availability');
+        var availability = document.getElementById('availability').innerHTML;
+        var color = "orange";
+        var min = 1;
+
+        if (availability == " in stock") {
+            color = "green";
+
+        }
+
+        if (availability == " out of stock") {
+            color = "red";
+            min = 0;
+        }
+        obj.style.color = color;
+        document.getElementById('quantity').value = min;
+    };
+
+    function redirectCartWish(mode) {
+        var qty = document.getElementById('quantity').value;
+        if (qty < 0) {
+            return;
+        }
+        switch (mode) {
+            case 'cart':
+                if (qty <= 0) {
+                    return;
+                } else {
+                    window.location = 'cart.php?return='+window.location.href+'&mode=add&where=cart&id=<[id]>&qty=' + qty;
+                    return;
+                }
+                break;
+            case 'wish':
+                window.location = 'cart.php?return='+window.location.href+'&mode=add&where=wish&id=<[id]>';
+                return;
+        }
+    }
+
+</script>
+
+
+<!-- Product-Details-page -->
+<div class="details-page">
+    <div class="content details-page">
+        <!---start-product-details--->
+        <div class="product-details">
+            <div class="container">
+
+                <!----//details-product-slider--->
+                <div class="details-left" style="width:100%; margin-top: 30px;">
+
+                    <div style="margin-bottom:30px; width:100%; float:left; min-height: 310px;">
+                        <div style="width:22%; float:left;">
+                            <div class="product-pic"
+                                 style="float:left;padding:10px; background-color: #ecebdf;">
+                                <img class="img_owl_slider" src="/readerscorner/images/cover/<[cover]>"/>
+                            </div>
+                        </div>
+
+
+                        <div class="details-left-info" style="width:77%; float:right;">
+                            <div class="details-right-head">
+                                <h2 style="margin:0;"><[title]></h2>
+                                <div style="border-bottom:1px solid #b0aaa0; margin-bottom:30px;"></div>
+
+                                <div style="float:left; width:49%; margin-bottom:20px;">
+                                    <p><strong>Publication Date:</strong> <[publication_date::format library="utils"]>
+                                    </p>
+                                    <p><strong># of Pages:</strong> <[pages::isempty library="utils"]></p>
+                                    <p><strong>Dimension:</strong> <[dimension::isempty library="utils"]></p>
+                                    <p><strong>ISBN13:</strong> <[isbn13::isempty library="utils"]></p>
+                                    <p><strong>Authors:</strong> <[foreach]> <a href="search.php?sq=<[authorname]>&mode=a"><u><[authorname]></u></a>
+                                        <[/foreach]></p>
+
+                                    <label style="margin-top:40px;" for="quantity">Quantity:</label>
+                                    <input type="number" name="quantity" class="pageinput" id="quantity" required min="0" max="<[availability]>" step="1"/>
+                                </div>
+                                <div style="float:left; width:49%;">
+                                    <p><strong>Language:</strong> <[language]></p>
+                                    <p><strong>Publisher:</strong> <[publisher::isempty library="utils"]></p>
+                                    <p><strong>Availability:</strong> <span id="availability" style="font-weight: bold"> <[availability::checkavailability amount="25" library="utils"]></span>
+                                    <p><strong>Vote's average:</strong> <span id="average" style="font-size:110%;"><[average::checkavg library="utils"]></span>
+
+                                    <p class="p_product_data" style="float:left;"><strong>€</strong> <strike style="color: red; "><[price]></strike> <strong><[newprice]></strong></p>
+                                    <p class="p_product_data" style="<[hidden]> float:left; text-align: right">-<[discount]>%</p>
+                                    <img class="cart-wish-btn" src="/readerscorner/images/add-to-cart.png" onclick="redirectCartWish('cart');">
+                                    <img class="cart-wish-btn" src="/readerscorner/images/add-to-wish.png" onclick="redirectCartWish('wish');">
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                        <div class="prod_desc"> <!-- TODO COSO -->
+                            <p><strong>Description: </strong></p>
+                                <div class="moreLess" style="padding-bottom:10px">
+                                    <p align="justify"><[description::isempty library="utils"]></p>
+                                </div>
+
+                            </div>
+                    </div>
+
+                <div class="reviewContainer">
+                    <div class="addReview" style="<[show]>">
+                        <form id="reviewForm" method="POST" action="item.php">
+
+                            <p style="float:left"><strong>Add a short review</strong> (max 300 characters)</p>
+                            <p style="float:right">
+                                <label  style="font-weight: 100" for="vote"><b>Vote</b> (from 1 to 5):</label>
+                                <input type="number" min="1" max="5" id="vote" name="vote" class="pageinput" style="background-color: white; color: #b0aaa0;" step="1" required/>
+                            </p>
+                            <input type="hidden" name="page" value="1"/>
+                            <input type="hidden" id="bookid" name="bookid" value="<[bookid]>"/>
+
+                            <textarea id="review" required maxlength="300" class="reviewTextarea" name="review"></textarea>
+                            <button type="submit" class="myButton2" id="reviewSubmit">Send</button>
+                        </form>
+                    </div>
+
+                    <div class="reviewListContainer" style="<[hideReviews]>">
+                        <p style="float:left;"><strong>User's reviews:</strong></p>
+                        <br>
+                        <br>
+
+                        <[foreach]>
+                        <div class="reviewItem">
+                            <button type="button" style="<[showRemove]>" class="myButton2delete" onclick="this.style.display='none'; this.nextElementSibling.style.visibility='visible';" >Remove</button>
+                            <button type="button" style="<[showRemove]>; visibility:hidden" class="myButton2delete" onclick="window.location='item.php?page=2&rid=<[rid]>&pid='+document.getElementById('bookid').value">Confirm</button>
+
+                            <p class="reviewAuthor">user: <b><[reviewName]></b></p>
+                            <p class="reviewBody"><[body]></p>
+                            <p class="reviwVote">vote: <b><[vote]>/5</b></p>
+                        </div>
+                        <[/foreach]>
+
+
+                        <ul class="pagination" >
+                            <li >
+                                <a class="pagebutton" href="item.php?pid=<[sq]>&pn=1" aria-label="Previous"><span aria-hidden="true">«</span></a>
+                            </li>
+                            <li class="<[disabled_prev]>">
+                                <a class="pagebutton" href="item.php?pid=<[sq]>&pn=<[prevPage]>">‹</a>
+                            </li>
+                            <li class="active">
+                                <a class="pagebuttonMain" href="#">Page <[currentPage]> of <[lastPage]></a>
+                            </li>
+                            <li class="<[disabled_next]>">
+                                <a class="pagebutton" href="item.php?pid=<[sq]>&pn=<[nextPage]>">›</a>
+                            </li>
+                            <li>
+                                <a class="pagebutton" href="item.php?pid=<[sq]>&pn=<[lastPage]>" aria-label="Next"><span aria-hidden="true">»</span></a>
+                            </li>
+
+                        </ul>
+
+                            <ul class="pagination" style="float:right;">
+                                <li>
+                                <span class="pagebutton2"  aria-hidden="true">
+                                    <a style="pointer-events: none"> Jump to page &nbsp;</a>
+                                    <input class="pageinput" type="number" min="1" step="1" id="jump"/>
+                                </span>
+                                </li>
+                                <li class="no_hover" style="cursor: pointer;" onclick="window.location='item.php?pid=<[sq]>&pn='+document.getElementById('jump').value"><a class="pagebutton" aria-label="Next"><span aria-hidden="true">»</span></a></li>
+                            </ul>
+
+                        <ul class="pagination" style="float: right; margin-right:10px;">
+                            <li>
+                            <span class="pagebutton2" aria-hidden="true">
+                                <a style="pointer-events: none;">Page size:&nbsp;</a>
+                                <input id="psize" value="<[psize_a]>" class="pageinput" type="text" pattern="^[0-9]+$" onclick="this.value='';" onchange="window.location='item.php?pid=<[sq]>&psize_a='+document.getElementById('psize').value"/>
+                            </span>
+                            </li>
+                        </ul>
+
+                        <div style="margin-bottom:20px;"></div>
+                    </div>
+                </div>
+                </div>
+            </div>
+
+
+
+
+            <div class="clearfix"></div>
+        </div>
+
+
+
+        <div class="clearfix"></div>
+    </div>
+
+
+
+<script>
+    var collapsedSize = '67px';
+    $('.moreLess').each(function() {
+        var h = this.scrollHeight+10;
+        var div = $(this);
+        if (h > 67) {
+            div.css('height', collapsedSize);
+            div.after('<p id="more" class="myButton2">Show more</p>');
+            var link = div.next();
+            link.click(function(e) {
+                if (link.text() != 'Show less') {
+                    link.text('Show less');
+                    div.animate({
+                        'height': h
+
+                    });
+                } else {
+
+                    div.animate({
+                        'height': collapsedSize
+                    });
+                    link.text('Show more');
+                }
+            });
+        }
+    });
+</script>
+
+<!-- /Product-Details-page -->

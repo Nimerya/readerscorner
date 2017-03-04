@@ -1,0 +1,117 @@
+<div class="Contact">
+    <!----- header-section ---->
+    <div class="header-section">
+        <div class="container">
+            <h1>Signup</h1>
+        </div>
+    </div>
+    <!----- header-section ---->
+    <!----- hosting-grids ----->
+    <div class="contact-grids">
+        <div class="container">
+            <div class="contact-bottom-grids">
+                <form id="dataentry" action="<[action]>.php<[additionalPars]>" method="POST">
+                    <input type="hidden" id="page" name="page" value="1"/>
+
+                        <div class="contact-bottom-grid-left" style="width:48%;">
+                            <div class="text">
+                                <div class="text-fild" >
+                                    <label for="name" ><span>Name:</span></label>
+                                    <input type="text" style="width: 125%;" required class="text" value="<[name]>" id="name" name="name" placeholder="Your Name here" tabindex="1">
+                                </div>
+                                <br>
+                                <div class="text-fild" style="margin-top:15px;">
+                                    <label for="email"><span>Email:</span></label>
+                                    <input type="email" style="width: 175%;" id="email" tabindex="3" name="email" value="<[email]>" class="text" oninput="document.getElementById('email2').pattern = escapeRegExp(this.value)" placeholder="Your Email here" required>
+                                </div>
+
+
+                                <br>
+
+                                <div class="text-fild" style="margin-top:15px; <[hidePassword]>">
+                                    <label for="password"><span>Password:</span></label>
+                                    <input type="password" style="width: 98%;" id="password" tabindex="5" name="password" class="text" oninput="document.getElementById('password2').pattern = escapeRegExp(this.value)" <[requiredPassword]> placeholder="Your Password here">
+                                </div>
+
+                                <br>
+
+                                <div class="text-fild" style="margin-top:15px;">
+                                    <label for="telephone"><span>Telephone:</span></label>
+                                    <input type="number" required style="width: 98%;" id="telephone" tabindex="7" value="<[telephone]>" name="telephone" class="text" placeholder="Your Telephone number here">
+                                </div>
+
+                                <br>
+
+                                <div class="text-fild" style="margin-top:25px; width:100%; <[hideTerms]>">
+                                    <input type="checkbox" <[requiredTerms]>  tabindex="9" id="terms" name="terms"/>
+                                    <label for="terms"><span>&nbspI accept the <a href="page.php?item=22">Terms & Conditions</a></span></label>
+                                </div>
+
+                                <div class="clearfix"> </div>
+                            </div>
+
+                            <br>
+
+                            <input type="submit" value="submit">
+
+
+                        </div>
+
+
+
+                        <div class="contact-bottom-grid-right" style="width:50%;">
+
+
+                        <div class="text">
+                            <div class="text-fild">
+                                <label for="surname" ><span>Surname:</span></label>
+                                <input type="text" style="width: 125%;" required class="text" tabindex="2" value="<[surname]>" id="surname" name="surname" placeholder="Your Surname here">
+                            </div>
+
+                            <br>
+                            <div class="text-fild" style="margin-top:15px;">
+                                <label for="email2"><span>Confirm Email:</span></label>
+                                <input type="email" style="width: 175%;" id="email2" name="email2" tabindex="4" value="<[email]>" class="text" placeholder="Repeat Email" required>
+                            </div>
+
+                            <br>
+
+                            <div class="text-fild" style="margin-top:15px; <[hidePassword]>">
+                                <label for="password2"><span>Repeat Password:</span></label>
+                                <input type="password" style="width: 98%;" id="password2" name="password2" tabindex="6" class="text" <[requiredPassword]> placeholder="Repeat Password">
+                            </div>
+
+
+
+                            <br>
+
+                            <div class="text-fild" style="margin-top:15px;">
+                                <label for="birthday"><span>Birthday:</span></label>
+                                <input type="date" style="width: 80%; height:50px;" id="birthday" min="1917-01-01" tabindex="8" value="<[birth_day]>" max="1999-12-31" name="birthday" class="text" required/>
+                            </div>
+
+                            <br>
+
+                            <div class="text-fild" style="margin-top:25px; width:100%;">
+                                <label style="color:#aeaba5;"><span>All the fields are mandatory</span></label>
+                            </div>
+
+                            <div class="clearfix"> </div>
+                        </div>
+
+
+                </div>
+                </form>
+                <div class="clearfix"> </div>
+            </div>
+        </div>
+    </div>
+    <!----- hosting-grids ----->
+</div>
+
+
+<script>
+    function escapeRegExp(str) {
+        return str.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, "\\$&");
+    }
+</script>

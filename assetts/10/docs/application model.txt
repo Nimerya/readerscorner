@@ -1,0 +1,26 @@
+// DATA SCHEMA
+
+% news
+
+	id*
+	title
+	date 
+	body
+	category ref(category)
+
+% category
+
+	id* 
+	+ name
+	- description -- guideline: max(30 words)
+	- position 
+
+// CRUD OPERATION
+
+% CReate, Update, Delete - Report
+
+// PAGES
+
+% News Sumary/List
+
+% Single News

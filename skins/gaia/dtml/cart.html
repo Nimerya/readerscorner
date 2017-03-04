@@ -1,0 +1,109 @@
+<div style="margin-top:30px;"></div>
+<!-- bottom-grids -->
+<div class="bottom-grids">
+    <div class="container">
+
+        <div class="col-md-9 bottom-grids-left " style="width:100%;">
+
+
+
+            <div class="f-products" >
+                <button type="button" class="myButton2" style="float:right; <[hideProducts]> margin-top: 0" onclick="window.location='checkout.php'" >Proceed to checkout</button>
+
+                <h2><strong><[name]>'s <[where]></strong></h2>
+
+                <!----sreen-gallery-cursual---->
+
+
+                <div style="margin-top:20px;"></div>
+
+                <[noresults]>
+                <div class="sreen-gallery-cursual" style="<[hideProducts]>">
+
+                    <div id="owl-demo" class="owl-carousel text-center">
+
+                        <div style="width:100%; height: auto; margin: 0 auto;">
+                        <[foreach]>
+                        <div class="item" style="<[disabled]> cursor: pointer; width:215px; margin:3px 3px; float:left; background: #ecebdf; ">
+                            <div class="product-grid">
+                                <div class="product-pic">
+                                    <img class="img_owl_slider" onclick="location.href='item.php?pid=<[id]>';" src="/readerscorner/images/cover/<[cover]>"
+                                         title="<[title]>"/>
+                                </div>
+                                <div class="product-pic-info">
+                                    <h3><a href="item.php?pid=<[id]>"><[title::shorter length="18" library="utils"]></a></h3>
+                                    <div class="product-pic-info-price-cart">
+                                        <div class="product-pic-info-price" style="float:none; ">
+                                            <div style="float:left;">
+                                                <span style="font-size:115%;"><strong>€</strong> <strike><[price]></strike> <strong><[newprice]></strong></span>
+                                            </div>
+                                            <div style="float:right;">
+                                                <span style="font-size:115%;"><strong><[discount]></strong></span>
+                                            </div>
+                                            <div style="float:left; width:100%; margin-bottom:10px;"></div>
+                                            <div style="float:left;">
+                                                <span style="font-size:115%;"><[amount]></span>
+                                                <span style="font-size:115%; <[hideAddToCart]>"><img style="width:37px; border:1px solid #b5b4a5; margin-top:-5px; padding:2px;" onclick="window.location='cart.php?mode=add&where=cart&id=<[id]>&qty=1'" class="cart-wish-btn" src="/readerscorner/images/add-to-cart.png"/></span>
+
+                                            </div>
+                                            <div style="float:right">
+                                                <span style="font-size:115%;"><img style="width:35px; border:1px solid #b5b4a5; margin-top:-5px;" onclick="window.location='cart.php?mode=del&where=<[where3]>&id=<[id]>'" class="cart-wish-btn" src="/readerscorner/images/delete.png"/></span>
+                                            </div>
+                                        </div>
+
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <[/foreach]>
+                        </div>
+                    </div>
+                    <!--//sreen-gallery-cursual---->
+                </div>
+            </div>
+        </div>
+        <div class="clearfix" style="margin-bottom:50px;"></div>
+        <ul class="pagination" style="<[hideProducts]>">
+            <li >
+                <a class="pagebutton" href="cart.php?mode=show&where=<[where2]>&pn=1" aria-label="Previous"><span aria-hidden="true">«</span></a>
+            </li>
+            <li class="<[disabled_prev]>">
+                <a class="pagebutton" href="cart.php?mode=show&where=<[where2]>&pn=<[prevPage]>">‹</a>
+            </li>
+            <li class="active">
+                <a class="pagebuttonMain" href="#">Page <[currentPage]> of <[lastPage]></a>
+            </li>
+            <li class="<[disabled_next]>">
+                <a class="pagebutton" href="cart.php?mode=show&where=<[where2]>&pn=<[nextPage]>">›</a>
+            </li>
+            <li>
+                <a class="pagebutton" href="cart.php?mode=show&where=<[where2]>&pn=<[lastPage]>" aria-label="Next"><span aria-hidden="true">»</span></a>
+            </li>
+
+        </ul>
+
+        <ul class="pagination" style="float:right; <[hideProducts]>">
+            <li>
+                <span class="pagebutton2"  aria-hidden="true">
+                    <a style="pointer-events: none"> Jump to page &nbsp;</a>
+                    <input class="pageinput" type="number" min="1" step="1" id="jump"/>
+                </span>
+            </li>
+            <li class="no_hover" style="cursor: pointer;" onclick="window.location='cart.php?mode=show&&where=<[where2]>pn='+document.getElementById('jump').value"><a class="pagebutton" aria-label="Next"><span aria-hidden="true">»</span></a></li>
+        </ul>
+
+        <ul class="pagination" style="float: right; margin-right:10px; <[hideProducts]>">
+            <li>
+                <span class="pagebutton2" aria-hidden="true">
+                    <a style="pointer-events: none;">Page size:&nbsp;</a>
+                <input id="psize" value="<[psize_a]>" class="pageinput" type="text" pattern="^[0-9]+$" onclick="this.value='';" onchange="window.location='cart.php?mode=show&where=<[where2]>&psize_a='+document.getElementById('psize').value"/>
+            </span>
+            </li>
+        </ul>
+    </div>
+
+</div>
+
+
+<!-- bottom-grids -->

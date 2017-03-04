@@ -1,0 +1,117 @@
+
+<!-- Product-Details-page -->
+<div class="details-page">
+    <div class="content details-page">
+        <!---start-product-details--->
+        <div class="product-details">
+            <div class="container">
+
+                <div style="float:left;">
+                    <h3 style="float:left; width:100%; margin-top:20px;"><strong>Order Summary</strong></h3>
+                    <h4 style="float:left; margin-top:20px;"><strong><[addressText]></strong></h4>
+                </div>
+
+                <div class="reviewContainer">
+
+                    <div class="reviewListContainer" style="margin-top:-20px;">
+                        <br>
+                        <div class="reviewItem" style="position:relative">
+                            <p class="addressItem"><b>Name:</b> <[name::replace library="utils"]> <[surname::replace library="utils"]></p>
+                            <p class="addressItem"><b>Address:</b> <[address::replace library="utils"]></p>
+                            <p class="addressItem"><b>Country:</b> <[country::replace library="utils"]></p>
+                            <p class="addressItem"><b>Region:</b> <[region::replace library="utils"]></p>
+                            <p class="addressItem"><b>City:</b> <[city::replace library="utils"]></p>
+                            <p class="addressItem" style="margin:0; width:50%;"><b>ZipCode:</b> <[zip_code]></p>
+                        </div>
+
+                        <div style="margin-bottom:20px;"></div>
+                    </div>
+                </div>
+
+
+                <div style="float:left; border-bottom:1px solid #b0aaa0; width:100%;"></div>
+
+
+                <div style="float:left;">
+                    <h4 style="float:left; margin-top:20px;"><strong><[paymentText]></strong></h4>
+                </div>
+
+                <div class="reviewContainer">
+
+                    <div class="reviewListContainer" style="margin-top:-20px;">
+                        <br>
+                        <div class="reviewItem" style="position:relative">
+                            <p class="addressItem"><b>Number:</b> <[number::cutnumber library="utils"]></p>
+                            <p class="addressItem"><b>Owner:</b> <[owner::replace library="utils"]></p>
+                            <p class="addressItem"><b>Expire Date:</b> <[expire_month]>/<[expire_year]></p>
+                        </div>
+
+                        <div style="margin-bottom:20px;"></div>
+                    </div>
+                </div>
+
+
+                <div style="float:left; border-bottom:1px solid #b0aaa0; width:100%;"></div>
+
+
+                <div style="float:left;">
+                    <h4 style="float:left; margin-top:20px;"><strong>Products:</strong></h4>
+                </div>
+
+                <div class="reviewContainer">
+
+                    <div class="reviewListContainer" style="margin-top:-20px;">
+                        <br>
+                        <table style="width:100%;" class="reportTable">
+                            <tr style="border-bottom:1px solid #b0aaa0">
+                                <th>Title</th>
+                                <th>ISBN13</th>
+                                <th style="<[hideColumn1]>">Price</th>
+                                <th>Amount</th>
+                                <th style="<[hideColumn2]>">Discount</th>
+                                <th>Final Price</th>
+                            </tr>
+                            <[foreach]>
+
+                            <tr style="<[coloredRow]>">
+                                <td><a  style="cursor:pointer" href="item.php?pid=<[isbn13]>"><[title::shorter length="30" library="utils"]></a></td>
+                                <td><a  style="cursor:pointer" href="item.php?pid=<[isbn13]>"><[isbn13]></a></td>
+                                <td style="<[hideColumn3]>">€<[originalPrice]></td>
+                                <td><[amount]></td>
+                                <td style="<[hideColumn4]>"><[discount::isempty library="utils"]></td>
+                                <td>€<[final_price]></td>
+                            </tr>
+                            <[/foreach]>
+                        </table>
+
+                        <br>
+                        <br>
+
+                        <table style="width:15%;" class="reportTable">
+
+                            <tr class="reportTableColored" style="border-bottom:1px solid #b0aaa0;">
+                                <th >Total</th>
+                                <th style="text-align: right; font-size: 115%;">€<[total]></th>
+                            </tr>
+
+                        </table>
+
+                        <div style="margin-bottom:20px;"></div>
+                    </div>
+
+                    <input type="button" class="bigbutton" style="float:right; <[hideButtons]>" value="Confirm"  onclick="window.location='checkout.php?step=3'">
+                    <input type="button" class="bigbutton" style="float:left; <[hideButtons]>" value="Cancel" onclick="window.location='cart.php?mode=show&where=cart'">
+
+
+
+                </div>
+
+            </div>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+</div>
+
+<br>
+<br>
+

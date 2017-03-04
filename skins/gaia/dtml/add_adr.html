@@ -1,0 +1,99 @@
+<div class="Contact">
+    <!----- header-section ---->
+    <div class="header-section">
+        <div class="container">
+            <h1><[mode::uppercase library="utils"]> <[what::uppercase library="utils"]></h1>
+        </div>
+    </div>
+    <!----- header-section ---->
+    <!----- hosting-grids ----->
+    <div class="contact-grids">
+        <div class="container">
+            <div class="contact-bottom-grids">
+                <form id="dataentry" action="edit.php?mode=<[mode]>&what=adr" method="POST">
+                    <input type="hidden" id="page" name="page" value="1"/>
+                    <input type="hidden" name="idaddr" value="<[idaddr]>"/>
+
+
+                    <div class="contact-bottom-grid-left" style="width:48%;">
+                            <div class="text">
+
+
+                                <div class="text-fild" >
+                                    <label for="country" ><span>Country:</span></label>
+                                    <input type="text" style="width: 125%;" required class="text" value="<[country]>" id="country" tabindex="1" name="country" placeholder="Your Country here">
+                                </div>
+                                <br>
+
+
+                                <br>
+
+                                <div class="text-fild" style="margin-top:15px;">
+                                    <label for="city"><span>City:</span></label>
+                                    <input type="text" style="width: 125%;" id="city" name="city" value="<[city]>" class="text" tabindex="3" required placeholder="Your City here">
+                                </div>
+
+                                <br>
+
+                                <div class="text-fild" style="margin-top:15px;">
+                                    <label for="address"><span>Address:</span></label>
+                                    <input type="text" required style="width: 180%;" id="address" name="address" value="<[address]>" tabindex="5" class="text" placeholder="Your Address here">
+                                </div>
+
+                                <br>
+
+                                <div class="clearfix"> </div>
+                            </div>
+
+                            <br>
+
+                            <input type="submit" value="Send">
+
+
+                        </div>
+
+
+
+                        <div class="contact-bottom-grid-right" style="width:50%;">
+
+
+                        <div class="text">
+
+                            <div class="text-fild" style="margin-top:0px;">
+                                <label for="region"><span>Region:</span></label>
+                                <input type="text" style="width: 125%;" id="region" value="<[region]>" name="region" tabindex="2" class="text" placeholder="Your Region here" required>
+                            </div>
+
+                            <br>
+
+
+                            <div class="text-fild" style="margin-top:15px;">
+                                <label for="ZipCode"><span>ZipCode:</span></label>
+                                <input type="text" style="width: 80%; height:50px;" id="ZipCode" name="zip_code" value="<[zip_code]>" tabindex="4" class="text" placeholder="Your ZipCode here" required/>
+                            </div>
+
+                            <br>
+
+                            <div class="text-fild" style="margin-top:25px; width:100%;">
+                                <label style="color:#aeaba5;"><span>All the fields are mandatory</span></label>
+                            </div>
+
+                            <div class="clearfix"> </div>
+                        </div>
+
+
+                </div>
+                </form>
+                <div class="clearfix"> </div>
+            </div>
+        </div>
+    </div>
+    <!----- hosting-grids ----->
+</div>
+
+
+<script>
+    function escapeRegExp(str) {
+        return str.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, "\\$&");
+    }
+</script>

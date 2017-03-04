@@ -1,0 +1,82 @@
+<div class="panel-body">
+    <!-- tables -->
+
+    <div class="agile-tables">
+        <div class="w3l-table-info">
+            <div class="blank-page" style="height: 67px; <[hidden]>">
+
+                <div style="float:left; line-height: 35px; height:35px; width:20%">
+                    <span style="display: inline-block; vertical-align: middle; line-height: normal;">
+                        <h4 id="forms-horizontal">Choose a <[table::uppercase library="utils"]></h4>
+                    </span>
+                </div>
+                    <form id="search" name="search" action="<[table]>.php?page=0" method="POST">
+                        <div class="form-group" style="float:right; width:75%; display:inline-block">
+
+                            <div class="col-sm-10" style="float:right; width:auto; padding-left:0px; padding-right:0px;">
+                                <button type="submit" style="background-color: #995b2b; color:#FFFFFF" class="btn btn-default myBtn">Search</button>
+                            </div>
+                            <div class="col-sm-10" style="float:right; width:50%; padding-left:0px;">
+                                <input type="text" autofocus="autofocus" class="form-control user-success" id="search_query" name="search_query" title="<[searchplaceholder::uppercase library="utils"]>" placeholder="<[searchplaceholder::uppercase library="utils"]>">
+
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+
+            <table id="table">
+                <thead>
+                <tr>
+                    <[foreach]>
+                    <th><[key]></th>
+                    <[/foreach]>
+
+                </tr>
+                </thead>
+                <tbody>
+
+                <[foreach]>
+                <!-- riga inizio-->
+                <tr style="cursor: pointer;" class="hoverEffect" onclick='window.location = "<[auxtable]>?page=1&id=<[id]>"'>
+                    <[foreach]>
+                    <td><[value::shorter length="50" library="utils"]></td>
+                    <[/foreach]>
+                </tr>
+                <!-- fine riga -->
+                <[/foreach]>
+                </tbody>
+            </table>
+        </div>
+
+    <!-- //tables -->
+    <div style="<[hidden]>">
+    <ul class="pagination">
+        <li><a href="<[table]>.php?page=0&pn=1" aria-label="Previous"><span aria-hidden="true">«</span></a></li>
+        <li class="<[disabled_prev]>"><a href="<[table]>.php?page=0&pn=<[prevPage]>">‹</a></li>
+        <li class="active"><a href="#">Page <[currentPage]> of <[lastPage]></a></li>
+        <li class="<[disabled_next]>"><a href="<[table]>.php?page=0&pn=<[nextPage]>">›</a></li>
+        <li><a href="<[table]>.php?page=0&pn=<[lastPage]>" aria-label="Next"><span aria-hidden="true">»</span></a></li>
+
+    </ul>
+
+    <ul class="pagination" style="float:right;">
+        <li><span aria-hidden="true">Jump to page &nbsp;<input style="height: 22px; width: 40px; text-align: center;" type="number" min="1" step="1" id="jump"/></span></li>
+        <li class="no_hover" style="cursor: pointer;" onclick="window.location='<[table]>.php?page=0&pn='+document.getElementById('jump').value"><a aria-label="Next"><span aria-hidden="true">»</span></a></li>
+
+    </ul>
+
+    <ul class="pagination" style="float: right; margin-right:5px;">
+        <li>
+            <span aria-hidden="true">Page size:&nbsp;
+                <input id="psize" value="<[psize_a]>" style="height: 22px; width: 40px; text-align: center;" type="text" pattern="^[0-9]+$" onclick="this.value='';" onchange="window.location='<[table]>.php?page=0&psize_a='+document.getElementById('psize').value"/>
+
+            </span>
+        </li>
+    </ul>
+    </div>
+</div>
+
+
+

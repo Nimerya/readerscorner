@@ -1,0 +1,290 @@
+<!-- banner -->
+<div class="banner">
+    <div class="container">
+        <!--- img-slider --->
+        <div class="img-slider">
+            <!----start-slider-script---->
+            <script src="/readerscorner/skins/gaia/js/responsiveslides.min.js"></script>
+            <script>
+                // You can also use "$(window).load(function() {"
+                $(function () {
+                    // Slideshow 4
+                    $("#slider4").responsiveSlides({
+                        auto: true,
+                        pager: true,
+                        nav: true,
+                        speed: 500,
+                        namespace: "callbacks",
+                        before: function () {
+                            $('.events').append("<li>before event fired.</li>");
+                        },
+                        after: function () {
+                            $('.events').append("<li>after event fired.</li>");
+                        }
+                    });
+
+                });
+            </script>
+            <!----//End-slider-script---->
+
+            <!-- Slideshow 4 -->
+            <div id="top" class="callbacks_container">
+                <ul class="rslides" id="slider4">
+                    <[foreach]>
+                    <li onclick='window.location="<[link]>"'>
+                        <img class="img-responsive "
+                             src="/readerscorner/images/slider/<[image]>" style="max-height:483px; cursor:pointer;">
+                        <div class="slider-caption" style="background-color: rgba(247,246,238, .8);">
+                            <h1><[title]></h1>
+                            <p><[body::shorter length="100" library="utils"]></p>
+                        </div>
+                    </li>
+                    <[/foreach]>
+                </ul>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        <!-- slider -->
+    </div>
+</div>
+<!-- banner -->
+
+<div style="margin-bottom:50px;"></div>
+
+<!-- 3 random categories -->
+<div class="bottom-grids">
+    <div class="container">
+        <div class="col-md-9 bottom-grids-left" style="width:100%;">
+            <div class="f-products">
+                <h2><strong>Some Categories</strong></h2>
+
+                <div class="top-grids" style="margin-top: -20px;">
+
+
+                        <[foreach]>
+                        <div class="col-md-4 top-grid text-center"id="boxCategory<[i]>" style="display: block;">
+
+                            <div class="top-grid-pic"  style="margin:0 auto;">
+                                <table style="width:120%">
+                                    <[foreach]>
+                                    <tr>
+                                        <img style="margin:2px; width:95px; height: 140px;"
+                                             onerror="this.src='/readerscorner/images/cover/empty.png'"
+                                             src="/readerscorner/images/cover/<[categorycover]>"/>
+                                    </tr>
+                                    <[/foreach]>
+                                </table>
+
+                                <br>
+
+                                <span style="font-size: 150%;"><[categoryname]></span>
+                            </div>
+
+                            <div class="top-grid-pic-info">
+                                <a href="search.php?cid=<[categoryid]>">See all</a>
+                            </div>
+                        </div>
+                        <[/foreach]>
+
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- top-grids -->
+
+<div style="margin-bottom:-70px;"></div>
+
+<!-- bottom-grids -->
+<div class="bottom-grids">
+    <div class="container">
+        <div class="col-md-9 bottom-grids-left" style="width:100%;">
+            <div class="f-products">
+                <h2><strong>New Arrivals</strong></h2>
+                <!----sreen-gallery-cursual---->
+                <div class="sreen-gallery-cursual">
+                    <!-- requried-jsfiles-for owl -->
+                    <link href="/readerscorner/skins/gaia/css/owl.carousel.css" rel="stylesheet">
+                    <script src="/readerscorner/skins/gaia/js/owl.carousel.js"></script>
+                    <script>
+                        $(document).ready(function () {
+                            $("#owl-demo").owlCarousel({
+                                items: 5,
+                                lazyLoad: true,
+                                autoPlay: 5000,
+                                navigation: true,
+                                navigationText: false,
+                                pagination: true
+                            });
+                        });
+                    </script>
+                    <!-- //requried-jsfiles-for owl -->
+                    <!-- start content_slider -->
+
+
+                    <div id="owl-demo" class="owl-carousel text-center">
+
+                        <[foreach]>
+                        <div class="item" style="cursor: pointer;  width:98%; margin: 20px auto 0 auto; background: #ecebdf;">
+                            <a href="item.php?pid=<[newid]>">
+                            <div class="product-grid">
+                                <div class="product-pic" style="height:290px;">
+                                    <img class="img_owl_slider" src="/readerscorner/images/cover/<[newcover]>"
+                                         title="<[newtitle]>"/>
+                                </div>
+                                <div class="product-pic-info">
+                                    <h3><a href="item.php?pid=<[newid]>"><[newtitle::shorter length="19" library="utils"]></a></h3>
+                                    <div class="product-pic-info-price-cart">
+                                        <div class="product-pic-info-price" style="float:none;">
+
+                                            <div style="float:left;">
+                                                <span style="font-size:115%;"><strong>€</strong> <strike><[newprice]></strike> <strong><[newnewprice]></strong></span>
+                                            </div>
+                                            <div style="float:right;">
+                                                <span style="font-size:115%;"><strong>-<[newarrivalsdiscount]>%</strong></span>
+                                            </div>
+                                        </div>
+
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            </a>
+                        </div>
+                        <[/foreach]>
+                    </div>
+                    <!--//sreen-gallery-cursual---->
+                </div>
+            </div>
+
+            <div style="margin-top:50px;"></div>
+            <div class="d-products f-products">
+                <h2><strong>Promotions</strong></h2>
+                <!----sreen-gallery-cursual---->
+                <div class="sreen-gallery-cursual">
+                    <!-- requried-jsfiles-for owl -->
+                    <link href="/readerscorner/skins/gaia/css/owl.carousel.css" rel="stylesheet">
+                    <script src="/readerscorner/skins/gaia/js/owl.carousel.js"></script>
+                    <script>
+                        $(document).ready(function () {
+                            $("#owl-demo1").owlCarousel({
+                                items: 5,
+                                lazyLoad: true,
+                                autoPlay: 5500,
+                                navigation: true,
+                                navigationText: false,
+                                pagination: true
+                            });
+                        });
+                    </script>
+                    <!-- //requried-jsfiles-for owl -->
+                    <!-- start content_slider -->
+                    <div id="owl-demo1" class="owl-carousel text-center">
+                        <[foreach]>
+                        <div class="item" style="cursor: pointer;  width:98%; margin: 20px auto 0 auto; background: #ecebdf;">
+                            <a href="item.php?pid=<[promid]>">
+                            <div class="product-grid">
+                                <div class="product-pic" style="height:290px;">
+                                    <img class="img_owl_slider" src="/readerscorner/images/cover/<[promcover]>"
+                                         title="<[promtitle]>"/>
+                                </div>
+                                <div class="product-pic-info">
+                                    <h3><a href="item.php?pid=<[promid]>"><[promtitle::shorter length="19" library="utils"]></a></h3>
+                                    <div class="product-pic-info-price-cart">
+                                        <div class="product-pic-info-price" style="float:none;">
+
+                                            <div style="float:left;">
+                                                <span style="font-size:115%;"><strong>€</strong> <strike><[promprice]></strike> <strong><[promnewprice]></strong></span>
+                                            </div>
+                                            <div style="float:right;">
+                                                <span style="font-size:115%;"><strong>-<[discount]>%</strong></span>
+                                            </div>
+                                        </div>
+
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            </a>
+                        </div>
+                        <[/foreach]>
+                    </div>
+                    <!--//sreen-gallery-cursual---->
+
+
+                </div>
+            </div>
+            <div style="margin-top:50px;"></div>
+            <div class="d-products f-products">
+                <h2><strong>Coming Soon</strong></h2>
+                <!----sreen-gallery-cursual---->
+                <div class="sreen-gallery-cursual">
+                    <!-- requried-jsfiles-for owl -->
+                    <link href="/readerscorner/skins/gaia/css/owl.carousel.css" rel="stylesheet">
+                    <script src="/readerscorner/skins/gaia/js/owl.carousel.js"></script>
+                    <script>
+                        $(document).ready(function () {
+                            $("#owl-demo2").owlCarousel({
+                                items: 5,
+                                lazyLoad: true,
+                                autoPlay: 4500,
+                                navigation: true,
+                                navigationText: false,
+                                pagination: true
+                            });
+                        });
+                    </script>
+                    <!-- //requried-jsfiles-for owl -->
+                    <!-- start content_slider -->
+                    <div id="owl-demo2" class="owl-carousel text-center">
+                        <[foreach]>
+                        <div class="item" style="opacity: 0.5; width:98%; margin: 20px auto 0 auto; background: #ecebdf;">
+                            <div class="product-grid">
+                                <div class="product-pic" style="height:290px;">
+                                    <img class="img_owl_slider" src="/readerscorner/images/cover/<[cscover]>"
+                                         title="<[cstitle]>"/>
+                                </div>
+                                <div class="product-pic-info">
+                                    <h3><a style="cursor: default;" href="#"><[cstitle::shorter length="19" library="utils"]></a></h3>
+                                    <div class="product-pic-info-price-cart">
+                                        <div class="product-pic-info-price" style="float:none;">
+                                            <div style="float:left;">
+                                                <span style="font-size:115%;">Coming:</span>
+                                            </div>
+                                            <div style="float:right;">
+                                                <span style="font-size:115%;"><strong><[csdate::format library="utils"]></strong></span>
+                                            </div>
+                                        </div>
+
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <[/foreach]>
+                    </div>
+                    <!--//sreen-gallery-cursual---->
+
+
+                </div>
+            </div>
+        </div>
+        <!-- <div class="col-md-3 bottom-grids-right">
+             <h2>Exclusive Offers</h2>
+             <p>Sign Up for Our Newsletter and get the exclusive offers directly into your inbox.</p>
+             <form>
+                 <input type="text" class="text" value="Type your email address ..." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Type your email address ...';}">
+                 <input type="submit" value="" />
+             </form>
+             <div class="shhiping text-center">
+                 <h2>Free Shipping</h2>
+                 <a href="#"><img src="/readerscorner/skins/gaia/images/offer-pic.png" title="$250" /></a>
+             </div>
+         </div>-->
+        <div class="clearfix"></div>
+    </div>
+</div>
+<!-- bottom-grids -->

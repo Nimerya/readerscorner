@@ -1,0 +1,58 @@
+<div class="Contact">
+    <!----- header-section ---->
+    <div class="header-section">
+        <div class="container">
+            <h1>Login</h1>
+        </div>
+    </div>
+    <!----- header-section ---->
+    <!----- hosting-grids ----->
+    <div class="contact-grids">
+        <div class="container">
+            <div class="contact-bottom-grids">
+                <div class="contact-bottom-grid-left">
+                    <h3>Info</h3>
+                    <p>Please enter your credentials in the next boxes, if you want to create an account proceed <a href="signup.php">here</a>.</p>
+                    <p>Forgot your password? Insert your Email and <a href="#" onclick="goToRecoverPsw();">click here</a> to get a new one.</p>
+                    <p>If you still have problems please <a href="contact.php">contact us</a>.</p>
+                </div>
+
+                <div class="contact-bottom-grid-right">
+
+                    <form id="dataentry" action="login.php" method="POST">
+                        <div class="text">
+
+                            <input type="hidden" id="page" name="page" value="1"/>
+
+                            <div class="text-fild" >
+                                <label for="email" ><span>Email:</span></label>
+                                <input type="email" style="width: 98%;" required class="text" id="email" name="email" placeholder="Your Email here">
+                            </div>
+                            <div class="text-fild">
+                                <label for="password"><span>Password:</span></label>
+                                <input type="password" value="" id="password" name="password" class="text" placeholder="Your Password here" required>
+                            </div>
+
+                            <div class="clearfix"> </div>
+                        </div>
+                        <input type="submit" value="Login">
+                    </form>
+                </div>
+                <div class="clearfix"> </div>
+            </div>
+        </div>
+    </div>
+    <!----- hosting-grids ----->
+</div>
+
+
+<script>
+    function goToRecoverPsw(){
+        var email=document.getElementById('email').value;
+        if(email!=""){
+            window.location="recover.php?email="+email;
+        }else{
+            return false;
+        }
+    }
+</script>

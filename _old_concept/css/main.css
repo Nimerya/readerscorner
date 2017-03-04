@@ -1,0 +1,282 @@
+html{
+    -webkit-font-smoothing: antialiased;
+    -moz-font-smoothing: antialiased;
+}
+
+html, body{
+    margin: 0px;
+    font-family: Arial;
+}
+
+body{
+    margin:0;
+    padding:0;
+    height:100%;
+    background-color:#EEE7e5;
+}
+
+form {
+    margin: 0px;
+}
+
+.holder{
+    min-height:100%;
+    position:relative;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+div.header{
+    margin: 0px;
+    display: block;
+}
+
+div.user_nav_box{
+    height: 45px;
+    background-color: #430b00;
+    min-width: 1200px;
+}
+
+div.header_box{
+    height: 85px;
+    background-color: #5e1000;
+    display: block;
+    min-width: 1200px;
+}
+
+div.header_wrap, div.nav_wrap{
+    width: 1200px;
+    margin-right: auto;
+    margin-left: auto;
+    
+}
+
+div.logo_container{ 
+    padding: 10px 0px; 
+    height: 85px;
+    float: left;
+}
+
+div.search_container, div.nav_left, div.nav_right{
+    display:flex; /*flex perchè ha una proprietà comoda -> align-items che permette di centrare gli elementi nel container senza dare misure */
+    position: relative;
+    align-items: center; 
+    height: 100%;
+}
+
+div.search_container{
+    float:right;
+}
+
+img{
+    max-height: 100%;
+    max-width: 100%;
+}
+
+#search{
+    width: 550px;
+    height: 45px;
+    padding: 10px 10px 10px 55px;
+    font-size: 14px;
+    border: 2px solid #430b00;
+    transition: border-color .3s;
+}
+
+div.nav_right{
+    float:right;
+}
+
+div.nav_left{
+    float:left;
+}
+
+div.nav img{
+    height: 25px;
+    width: 25px;
+    margin-right: 5px;
+}
+
+div.nav{
+    height: 100%;
+}
+
+div.nav_left a{
+    margin-right: 10px;
+}
+
+div.nav_right a{
+    margin-left: 10px;
+}
+
+div.nav a{
+    align-items: center;
+    display: flex;
+    height: 100%;
+    position: relative;
+    opacity: 0.7;
+    transition: opacity .3s;
+    font-size: 14px;
+    color:white;
+    text-decoration: none; 
+}
+
+
+div.nav a:hover{
+    opacity: 1;
+}
+
+div.search_container:before{ 
+    content:"";
+    position: relative;
+    display: block;
+    right: -40px;
+    min-width:27px;
+    min-height: 27px;
+    background:url('../icons/search.png') no-repeat;
+    background-size:100% auto;
+}
+
+#search_button, #adv_search_button, #login_button, #register_button{
+    
+    color: white;
+    height: 45px;
+    padding: 10px 40px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: border-color .3s;
+    border: 2px #b21617 solid;
+}
+
+#search_button, #adv_search_button{
+    margin-left: 7px;
+}
+
+#search_button{
+    background-color: #b21617;
+}
+
+#adv_search_button{
+    background-color : transparent;;
+}
+
+#login_button, #register_button{
+    margin-top: 10px;
+    background-color: #5e1000;
+}
+
+#search_button:hover ,#adv_search_button:hover , #login_button:hover, #register_button:hover{
+    border-color: #ff1617;
+}
+
+button, input {
+    outline: none;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+
+#search:focus{
+    border-color: #ff1617;
+}
+
+.mid-container{
+    width:1200px;
+    margin: 20px auto 0px auto;
+}
+
+.errors{
+    width: 1200px;
+    height: auto;
+    border:2px solid red;
+    margin-bottom: 20px;
+    background-color:white;
+    padding: 15px 25px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    line-height: 125%;
+}
+
+div.login_container, div.register_container{
+    width: 550px;
+    height: auto;
+}
+
+div.login_container{
+   float:left; 
+}
+
+div.register_container{
+   float:right; 
+}
+
+.sign{
+    display: block;
+    width: 100%;
+    height: 34px;
+    margin: 5px 0px;
+    padding: 6px 12px;
+    font-size: 14px;
+    color: #555;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    transition: border-color .3s;
+}
+
+.sign:hover{
+    border-color: #430b00;
+}
+
+.div_sign{
+    margin: 10px 0px;
+}
+
+.form_title{
+    font-size: 22px;
+    color: #430b00;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #430b00;
+}
+
+
+.footer{
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    background-color: #430b00;
+    color: white;
+    overflow: hidden;
+}
+
+.footer_item_box{
+    width:25%;
+    float:left;
+    padding: 30px 0px;
+}
+
+.footer_title, .footer_item{
+    width: 200px;
+}
+
+.footer_title{
+    padding-bottom: 15px;
+    font-size: 16px;
+}
+
+.footer_item, .footer_item2{
+    padding: 5px 0px;
+    font-size: 14px;
+    
+}
+
+.footer_item2{
+    text-align: right;
+}
+
+.footer_item{
+    border-bottom: 1px solid #5e1000;
+}

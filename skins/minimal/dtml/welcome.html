@@ -1,0 +1,42 @@
+<div class="blank">
+
+    <div class="blank-page">
+
+        <p>Today is <strong><[date]></strong>.</p>
+
+    </div>
+
+    <br>
+
+    <div class="blank-page">
+
+        <p>Welcome <strong><[name]></strong> to The Reader's Corner's Administration Panel. <br>
+           Please choose an option from the left menu.</p>
+    </div>
+
+
+    <br>
+
+    <div class="blank-page">
+
+        <p>There are <strong><[booknumber]></strong> books, <strong><[usernumber]></strong> users, <strong><[promnumber]></strong> active promotions and <strong><[orders]></strong> pending orders.</strong></p>
+
+    </div>
+
+    <br>
+
+    <div class="blank-page">
+
+        <p>We are running low on <strong><[booklow]></strong> books:</p>
+        <ul style="margin-left:30px; margin-top:10px;">
+            <[foreach]>
+            <li class="li_home_admin"  onclick="window.location='book.php?page=1&id=<[bookid]>'">
+                <span style="display: inline-block; width: 230px; margin-right:5px;"><[booktitle::shorter length="35" library="utils"]> </span> <span>(<strong><[availability]></strong> copies left)</span>
+            </li>
+            <[/foreach]>
+        </ul>
+
+
+
+    </div>
+</div>
