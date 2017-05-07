@@ -57,15 +57,21 @@
                         price as newprice,
                         discount AS newarrivalsdiscount
                         FROM book LEFT JOIN promotion ON id_promotion=promotion.id 
-                        WHERE end >= CURDATE() AND publication_date > (DATE(NOW()) - INTERVAL 30 DAY) 
+                        WHERE end >= CURDATE() 
+                        AND publication_date > (DATE(NOW()) - INTERVAL 30 DAY) 
                         AND publication_date <= CURDATE() 
                         ORDER BY publication_date DESC LIMIT 15");
      $books=$db->getResult();
-     foreach($books as $book_new){
-         // calcolo sconto e formattazione prezzo con 2 decimali
-          $book_new['newnewprice']=number_format(($book_new['newprice']-($book_new['newprice']*$book_new['newarrivalsdiscount'])/100) ,2,".","");
-     $body->setContent($book_new);
+     if($db->getNumRows()>0){
+         foreach($books as $book_new){
+             // calcolo sconto e formattazione prezzo con 2 decimali
+             $book_new['newnewprice']=number_format(($book_new['newprice']-($book_new['newprice']*$book_new['newarrivalsdiscount'])/100) ,2,".","");
+             $body->setContent($book_new);
+         }
+     }else{
+          $body->setContent("hiddenNewArrivals","display:none;");
      }
+
      //fine setcontent new arrivals
 
 
@@ -81,11 +87,14 @@
                         WHERE end >= CURDATE() AND publication_date <= CURDATE()
                         ORDER BY discount DESC LIMIT 15");
      $books_prom=$db->getResult();
-
-     foreach($books_prom as $book_prom){
-         // calcolo sconto e formattazione prezzo con 2 decimali
-          $book_prom['promnewprice']=number_format(($book_prom['promprice']-($book_prom['promprice']*$book_prom['discount'])/100) ,2,".","");
-          $body->setContent($book_prom);
+     if($db->getNumRows()>0){
+          foreach($books_prom as $book_prom){
+              // calcolo sconto e formattazione prezzo con 2 decimali
+               $book_prom['promnewprice']=number_format(($book_prom['promprice']-($book_prom['promprice']*$book_prom['discount'])/100) ,2,".","");
+               $body->setContent($book_prom);
+          }
+     }else{
+         $body->setContent("hiddenPromotions","display:none;");
      }
      //fine setcontent promotions
 
@@ -98,8 +107,13 @@
                              WHERE publication_date > CURDATE()
                              ORDER BY publication_date LIMIT 15");
      $books_cs=$db->getResult();
-     foreach($books_cs as $book_cs){
-         $body->setContent($book_cs);
+     if($db->getNumRows()>0){
+
+         foreach($books_cs as $book_cs){
+              $body->setContent($book_cs);
+          }
+     }else{
+          $body->setContent("hiddenNewArrivals","display:none;");
      }
      //fine setcontent coming soon
 
